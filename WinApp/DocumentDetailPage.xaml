@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="WinApp.DocumentDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="White" Padding="0,0,0,25">
+        <BreadcrumbBar x:Name="breadcrumb" >
+        </BreadcrumbBar>
+        <StackPanel Margin="0,15,0,0">
+            <TextBox Text="{x:Bind Document.Name, Mode=TwoWay}" Header="Name" Margin="0,15,0,0"></TextBox>
+            <TextBox Text="{x:Bind Document.Description, Mode=TwoWay}" Header="Description" Margin="0,15,0,0"></TextBox>
+            <TextBox Text="{x:Bind Document.Content, Mode=TwoWay}" Header="Content"
+                AcceptsReturn="True"
+                TextWrapping="Wrap"
+                     Height="300"
+                     Margin="0,15,0,0"
+                     >
+            </TextBox>
+
+            <Expander Header="Metadata" Margin="0,15,0,15" HorizontalAlignment="Stretch">
+                <StackPanel>
+                    <TextBox Text="{x:Bind Document.DocumentId}" IsEnabled="False" Header="Id"></TextBox>
+                    <TextBox Text="{x:Bind Document.Created}" IsEnabled="False" Header="Created"></TextBox>
+                    <TextBox Text="{x:Bind Document.Author.Name}" IsEnabled="False" Header="Author"></TextBox>
+                    <TextBox Text="{x:Bind Document.Author.AuthorId}" IsEnabled="False" Header="Author"></TextBox>
+                </StackPanel>
+            </Expander>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
+                <Button Margin="0,5,15,0" Content="Save" Click="SaveButton_Click"></Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,24 @@
+﻿<Page
+    x:Class="WinApp.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Background="White">
+
+        <StackPanel>
+            <TextBlock Margin="0,15,0,0">Generate dummy data</TextBlock>
+            <NumberBox Header="How many" Name="dataCount" Margin="0,15,0,0" HorizontalAlignment="Left"></NumberBox>
+            <Button Name="GenerateDataBtn" Click="GenerateDataBtn_Click" Margin="0,15,0,0">
+                <StackPanel Orientation="Horizontal">
+                    <ProgressRing Height="15" Width="15" Name="progress" Visibility="Collapsed" IsActive="False" Margin="0,0,5,0" HorizontalAlignment="Left"></ProgressRing>
+                    <TextBlock>Generate</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

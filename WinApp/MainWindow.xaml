@@ -1,0 +1,34 @@
+﻿<Window
+    x:Class="WinApp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#E6E6EA">
+        <NavigationView PaneDisplayMode="Auto" Name="NavView" 
+                             Loaded="NavView_Loaded"
+                             ItemInvoked="NavView_ItemInvoked"
+                             BackRequested="NavView_BackRequested"
+                            PaneTitle="Document manager"
+                        >
+            <NavigationView.MenuItems>
+                <NavigationViewItem Tag="home" Content="Documents" Icon="Home" ToolTipService.ToolTip="Show all documents"/>
+                <NavigationViewItem Tag="event_planner" Content="Event planner" Icon="Calendar" ToolTipService.ToolTip="Plan your events"/>
+            </NavigationView.MenuItems>
+               
+
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find" PlaceholderText="Search"></AutoSuggestBox>
+            </NavigationView.AutoSuggestBox>
+
+            <ScrollViewer Padding="43,25,25,25" Background="White">
+                <Frame x:Name="ContentFrame" IsTabStop="True"
+                       NavigationFailed="ContentFrame_NavigationFailed"></Frame>
+            </ScrollViewer>
+
+        </NavigationView>
+    </Grid>
+</Window>
