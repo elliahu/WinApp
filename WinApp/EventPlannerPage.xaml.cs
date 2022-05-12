@@ -173,6 +173,10 @@ namespace WinApp
                     calendar.SelectedDates.Add(day);
                     day = day.AddDays(1);
                 }
+
+                editBtn.IsEnabled = true;
+                shareBtn.IsEnabled = true;
+                delBtn.IsEnabled = true;
             }
         }
     }

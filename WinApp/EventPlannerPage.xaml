@@ -9,13 +9,13 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid Background="White" VerticalAlignment="Stretch">
+    <Grid VerticalAlignment="Stretch">
         <StackPanel VerticalAlignment="Stretch">
-            <CommandBar DefaultLabelPosition="Right" HorizontalAlignment="Stretch">
+            <CommandBar DefaultLabelPosition="Right" HorizontalAlignment="Left">
                 <AppBarButton Icon="NewWindow" Label="New" Click="NewEvent_Click"/>
-                <AppBarButton Icon="Edit" Label="Edit" Click="EditEvent_Click"/>
-                <AppBarButton Icon="Delete" Label="Delete" Click="DeleteEvent_Click"/>
-                <AppBarButton Icon="Share" Label="Share"/>
+                <AppBarButton IsEnabled="False" x:Name="editBtn" Icon="Edit" Label="Edit" Click="EditEvent_Click"/>
+                <AppBarButton IsEnabled="False" x:Name="delBtn" Icon="Delete" Label="Delete" Click="DeleteEvent_Click"/>
+                <AppBarButton IsEnabled="False" x:Name="shareBtn" Icon="Share" Label="Share"/>
             </CommandBar>
             
             <Grid>
@@ -23,16 +23,8 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                
-                
-                <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch">
-                    <CalendarView x:Name="calendar" HorizontalAlignment="Stretch" Margin="0,0,30,0"
-                                  CalendarViewDayItemChanging="calendar_CalendarViewDayItemChanging"
-                                  SelectionMode="Multiple"
-                                  VerticalAlignment="Stretch"/>
-                </StackPanel>
 
-                <StackPanel  Grid.Row="1" Grid.Column="1">
+                <StackPanel  Grid.Row="1" Grid.Column="0">
                     <ListView x:Name="eventListView" ItemsSource="{x:Bind Events}" Loaded="eventListView_Loaded"
                               SelectionMode="Single" IsItemClickEnabled="False" SelectionChanged="eventListView_SelectionChanged">
                         <ListView.ItemTemplate>
@@ -46,6 +38,16 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
+
+
+                <StackPanel Grid.Row="1" Grid.Column="1" VerticalAlignment="Stretch">
+                    <CalendarView x:Name="calendar" HorizontalAlignment="Stretch" Margin="0,0,30,0"
+                                  CalendarViewDayItemChanging="calendar_CalendarViewDayItemChanging"
+                                  SelectionMode="Multiple"
+                                  VerticalAlignment="Stretch"/>
+                </StackPanel>
+
+                
                 
                 
             </Grid>

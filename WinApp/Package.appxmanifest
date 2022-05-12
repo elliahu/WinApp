@@ -9,7 +9,7 @@
   <Identity
     Name="44312b93-39e7-4437-a214-6a6a88d00c41"
     Publisher="CN=Matej Elias"
-    Version="0.1.1.0" />
+    Version="0.1.2.0" />
 
   <Properties>
     <DisplayName>DocumentManager</DisplayName>

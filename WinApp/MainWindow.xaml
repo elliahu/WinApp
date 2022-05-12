@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#E6E6EA">
+    <Grid Background="#1c1c1c">
         <NavigationView PaneDisplayMode="Auto" Name="NavView" 
                              Loaded="NavView_Loaded"
                              ItemInvoked="NavView_ItemInvoked"
@@ -24,10 +24,12 @@
                 <AutoSuggestBox x:Name="NavViewSearchBox" QueryIcon="Find" PlaceholderText="Search"></AutoSuggestBox>
             </NavigationView.AutoSuggestBox>
 
-            <ScrollViewer Padding="43,25,25,25" Background="White">
-                <Frame x:Name="ContentFrame" IsTabStop="True"
+            <Border CornerRadius="20 20 0 0">
+                <ScrollViewer >
+                    <Frame x:Name="ContentFrame" IsTabStop="True"
                        NavigationFailed="ContentFrame_NavigationFailed"></Frame>
-            </ScrollViewer>
+                </ScrollViewer>
+            </Border>
 
         </NavigationView>
     </Grid>
